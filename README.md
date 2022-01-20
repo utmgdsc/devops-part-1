@@ -26,6 +26,7 @@ firebase deploy
 
 The link to the live app will be outputted in your terminal  -->
 
+# Workshop Slides [here](https://docs.google.com/presentation/d/15gq9qibAPqK_-4rG68BTzmvzgonQBS0_7WKpJjrYFzs/edit?usp=sharing)
 
 
 
