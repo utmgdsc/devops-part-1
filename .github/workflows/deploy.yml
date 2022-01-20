@@ -1,0 +1,44 @@
+name: firebase app deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: use node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: "npm"
+      - name: install dependencies, build, test
+        run: |
+          npm install
+          npm run build
+          npm run test
+      - name: archive build for subsequent job(s)
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+  deploy:
+    name: Deploy
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: use build from earlier step
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
+      - name: Depoy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.DEVOPS_1_FIREBASE_TOKEN }}
