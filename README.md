@@ -28,10 +28,6 @@ The link to the live app will be outputted in your terminal  -->
 
 # Workshop Slides [here](https://docs.google.com/presentation/d/15gq9qibAPqK_-4rG68BTzmvzgonQBS0_7WKpJjrYFzs/edit?usp=sharing)
 
-# Recording [here](https://utoronto.zoom.us/rec/share/pqybyeg-1P-LshxTFlrM-zQ9cuntosmnY32RGkRyvDSJqh7b9VdcjRh60JMwPvoU.myYeMHPRsW4BEQKS)
-Passcode: Ndp8r#8uJx
-
-
 
 # React commands
 
